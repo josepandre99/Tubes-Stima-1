@@ -1,0 +1,115 @@
+<Card@Button>:
+    font_size: 32
+    color: 0, 0, 0, 1
+    size: 130, 200
+    background_color: .88, .88, .88, 1
+
+<DrawButton@Button>:
+    font_size: 16
+    color: .2, .2, .2, 1
+    size: 80,50
+    background_normal: ''
+    background_down: ''
+    background_color:  .88, .88, .88, 1
+
+<SolDisp@Button>:
+    font_size: 16
+    color: .2, .2, .2, 1
+    size: 250,50
+    background_normal: ''
+    background_down: ''
+    background_color:  .88, .88, .88, 1
+
+
+<CustomWidget>:
+    bt1 : draw
+    canvas.before :
+        Rectangle :
+            pos: self.pos
+            size: self.size
+            source: 'data/B_down.jpg'
+    Label:
+        font_size: 32
+        pos: 50, 200
+        text: "Solution:"
+    Card:
+        id : deckaku
+        pos: 25, root.y
+        background_normal : 'data/card.png'
+    Card:
+        id : card1
+        pos: 200, root.y
+        background_color : 0,0,0,0
+        background_normal : ''
+        col : 0,0,0,0
+        canvas :
+            Color :
+                rgba : self.col
+            Rectangle :
+                pos : self.pos
+                size : self.size
+                source : self.background_normal
+    Card:
+        id : card2
+        pos: 350, root.y
+        background_color : 0,0,0,0
+        background_normal : ''
+        col : 0,0,0,0
+        canvas :
+            Color :
+                rgba : self.col
+            Rectangle :
+                pos : self.pos
+                size : self.size
+                source : self.background_normal
+    Card:
+        id : card3
+        pos: 500, root.y
+        background_color : 0,0,0,0
+        background_normal : ''
+        col : 0,0,0,0
+        canvas :
+            Color :
+                rgba : self.col
+            Rectangle :
+                pos : self.pos
+                size : self.size
+                source : self.background_normal
+    Card:
+        id : card4
+        pos: 650, root.y
+        background_color : 0,0,0,0
+        background_normal : ''
+        col : 0,0,0,0
+        canvas :
+            Color :
+                rgba : self.col
+            Rectangle :
+                pos : self.pos
+                size : self.size
+                source : self.background_normal
+    DrawButton:
+        id : draw
+        text: "Draw"
+        pos: 550, 225
+        on_press : root.draw()
+        count : 0
+    DrawButton:
+        id : solve
+        text: "Solve"
+        pos: 650, 225
+        on_press : root.solve()
+    DrawButton:
+        id : exit
+        text : "Exit"
+        pos : 750, 225
+        on_press : app.stop()
+    SolDisp:
+        id : jawaban
+        font_size : 28
+        pos: 175, 225    
+    DrawButton:
+        id : value
+        text : ""
+        font_size : 28
+        pos : 450, 225   
